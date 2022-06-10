@@ -63,6 +63,6 @@ app.get('/', (req, res) => {
     console.log(`Server running on ${process.env.PORT}`);
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Your server is running on port ${PORT}`)
 })

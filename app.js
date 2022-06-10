@@ -12,12 +12,11 @@ import { slowDown } from './src/middleware/speedLimiter.js';
 import jsonwebtoken from 'jsonwebtoken';
 import { authenticateJWT } from './src/middleware/auth.js';
 
+const app = express();
 
 dotenv.config({ path: "./config.env" });
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 3000
 const mode = process.env.NODE_ENV
-
-const app = express();
 
 // Initialises dotenv package
 dotenv.config();
@@ -63,6 +62,6 @@ app.get('/', (req, res) => {
     console.log(`Server running on ${process.env.PORT}`);
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(PORT, () => {
     console.log(`Your server is running on port ${PORT}`)
 })
